@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mainMenu" class="menu-container">
+        <div class="menu-content">
+            <h1>Tower Defense</h1>
+            <button id="startGameBtn" class="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <div id="mapMenu" class="menu-container" style="display: none;">
+        <div class="menu-content">
+            <h1>Select Map</h1>
+            <div class="map-options">
+                <button class="map-btn" data-map="original">
+                    <img src="GREENIMAGE.jfif" alt="Original Map">
+                    <p>Original</p>
+                </button>
+                <button class="map-btn" data-map="map1">
+                    <img src="map1.jfif" alt="Map 1">
+                    <p>Map 1</p>
+                </button>
+                <button class="map-btn" data-map="map2">
+                    <img src="map2.jfif" alt="Map 2">
+                    <p>Map 2</p>
+                </button>
+                <button class="map-btn" data-map="map3">
+                    <img src="map3.jfif" alt="Map 3">
+                    <p>Map 3</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameContainer" class="game-container" style="display: none;">
+        <div class="hud">
+            <button id="mainMenuBtn" class="menu-btn">Main Menu</button>
+            <button id="skipWaveBtn" style="display: none;">Skip Wave</button>
+            <div class="stats">
+                <span>Gold: <span id="gold">500</span></span>
+                <span>Lives: <span id="lives">20</span></span>
+                <span>Wave: <span id="wave">1</span></span>
+            </div>
+            <button id="startWaveBtn">Start Wave</button>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="towers-panel">
+            <h3>Towers</h3>
+            <div class="tower-options">
+                <button class="tower-btn" data-type="basic" data-cost="100">
+                    Basic<br>$100
+                </button>
+                <button class="tower-btn" data-type="sniper" data-cost="200">
+                    Sniper<br>$200
+                </button>
+                <button class="tower-btn" data-type="cannon" data-cost="150">
+                    Cannon<br>$150
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="confirmDialog" class="modal" style="display: none;">
+        <div class="modal-content">
+            <p>Are you sure you want to return to main menu?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="modal-btn yes-btn">Yes</button>
+                <button id="confirmNo" class="modal-btn no-btn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
